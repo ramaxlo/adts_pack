@@ -62,7 +62,7 @@ func pack(writer io.Writer, reader io.Reader) error {
 		return err
 	}
 
-	sz := bitset.From([]uint64{uint64(buf.Len()) << 13})
+	sz := bitset.From([]uint64{uint64(buf.Len()+7) << 13})
 	bits = bits.Union(sz)
 
 	full := bitset.From([]uint64{0x7ff << 2})
