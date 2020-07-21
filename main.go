@@ -102,7 +102,7 @@ func main() {
 	flag.StringVar(&out_path, "o", "outout.aac", "Output file path")
 	flag.Parse()
 
-	if len(os.Args) < 2 {
+	if flag.NArg() < 1 {
 		flag.Usage()
 		os.Exit(1)
 	}
